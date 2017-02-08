@@ -6,11 +6,6 @@ $(document).ready(function() {
   //load things from local storage
   displayItemsFromLocalStorage();
 
-  //prevent page from refreshing when enter is pressed
-  $('#addTodoForm').submit(function(e){
-      e.preventDefault();
- });
-
   $("#add-button").click(addToDoItem);
 
   $("#todo-list").on('click', 'button', removeToDoItem);
@@ -48,6 +43,8 @@ function removeToDoItem() {
 }
 
 function addToDoItem() {
+  //prevent "enter" from refreshing page
+  event.preventDefault();
   //only add if there is a value there
   if($("#newtodo").val()){
     var newToDo = $("#newtodo").val();
