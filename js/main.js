@@ -13,12 +13,23 @@ $(document).ready(function() {
 
   $("#add-button").click(addToDoItem);
 
-  $("#todo-list").on('click', 'button', removeToDoItem)
+  $("#todo-list").on('click', 'button', removeToDoItem);
+  $('#todo-list').on('click', '.todo-checkbox', crossOutToDoItem);
 
   $("#todo-list").sortable();
   $("#todo-list").disableSelection();
 
 })
+
+function crossOutToDoItem(){
+  var ischecked= $(this).is(':checked');
+  var crossOutItem = $(this).parent().parent().children(".todo-desc").children("p").text();
+  if(ischecked){
+    $(this).parent().parent().children(".todo-desc").children("p").html("<strike>" + crossOutItem + "</strike");
+  } else {
+    $(this).parent().parent().children(".todo-desc").children("p").html(crossOutItem);
+  }
+}
 
 function removeToDoItem() {
 
@@ -48,11 +59,15 @@ function addToDoItem() {
     var newButton = $("<button>").addClass("remove-button").text("Remove");
     var newDesc = $("<p>").text(newToDo);
 
+    //add checkbox
+    var newCheckbox = $('<input type="checkbox">').addClass("todo-checkbox");
+
     //add it to the todo list
     newItemDesc.append(newDesc);
     newRemove.append(newButton);
     newItem.append(newItemDesc);
     newItem.append(newRemove);
+    newRemove.append(newCheckbox);
     $("#todo-list").append(newItem)
 
     $('#error-msg').css('visibility', 'visible').css('color', '#40bf79');
@@ -87,9 +102,13 @@ function displayItemsFromLocalStorage(){
         var newButton = $("<button>").addClass("remove-button").text("Remove");
         var newDesc = $("<p>").addClass("todo-remove").text(todoDescriptions[i]);
 
+        //add checkbox
+        var newCheckbox = $('<input type="checkbox">').addClass("todo-checkbox");
+
         //add it to the todo list
         newItemDesc.append(newDesc);
         newRemove.append(newButton);
+        newRemove.append(newCheckbox);
         newItem.append(newItemDesc);
         newItem.append(newRemove);
         $("#todo-list").append(newItem)
