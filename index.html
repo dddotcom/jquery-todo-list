@@ -3,9 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hello Front-End</title>
+  <title>jQuery to-do list</title>
+  <link href="https://fonts.googleapis.com/css?family=Short+Stack" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
-  <h1>Hello Front-End</h1>
+  <h1>My to-do list</h1>
+  <span id="error-msg">Please enter a new to-do item</span>
+  <form id="addTodoForm" method="GET" action="">
+    <input id="newtodo" name="newtodo" type="text" placeholder="new to-do item">
+    <button id="add-button" type="button">Add</button>
+  </form>
+
+  <div id="todo-list">
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

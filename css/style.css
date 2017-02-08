@@ -1,0 +1,81 @@
+body {
+  text-align: center;
+  background-color:	AliceBlue;
+  font-family: 'Short Stack', cursive;
+}
+
+form {
+  margin: 10px auto 50px auto;
+}
+
+button {
+  font-family: 'Short Stack', cursive;
+  padding: 10px;
+  color: #fff;
+  font-size: 1.3em;
+  border: none;
+}
+
+#todo-list {
+  width: 80%;
+  margin: auto;
+}
+
+#error-msg {
+  visibility: hidden;
+  color: #a30f2d;
+}
+
+#newtodo {
+  width: 50%;
+  padding: 10px;
+  font-size: 1.3em;
+  font-family: 'Short Stack', cursive;
+}
+
+#add-button {
+  background-color: #79d2a1;
+  margin-left: 10px;
+}
+#add-button:hover {
+  background-color: #40bf79;
+}
+#add-button:active {
+  background-color: #2d8655;
+}
+
+.todo-item {
+  width: 80%;
+  background-color: white;
+  margin: 5px;
+  display: inline-block;
+}
+
+.todo-desc {
+  margin: 10px;
+  float: left;
+}
+
+.todo-desc p {
+  text-align: left;
+  font-size: 1.5em;
+  padding: 10px;
+  margin: 0;
+}
+
+.todo-remove {
+  margin: 20px;
+  float: right;
+}
+
+.remove-button {
+  background-color: #dc143c;
+}
+
+.remove-button:hover {
+  background-color: #a30f2d;
+}
+
+.remove-button:active {
+  background-color: #750b20;
+}
